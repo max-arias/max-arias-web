@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "..\\..\\src\\App.svelte"
+  ],
+  "sourcesContent": [
+    "<style>\n\tmain {\n\t\tcolor: red;\n\t}\n\th1 {\n\t\tfont-family: 'Roboto Slab', serif;\n\t\tfont-size: 32px;\n\t}\n\n\tp {\n\t\tfont-family: 'Roboto Slab', serif;\n\t}\n</style>\n\n<main class=\"flex mb-4\">\n\t<h1>Hey! I'm Max</h1>\n\t<p>I'm a full-stack web developer. How can I help?</p>\n</main>\n"
+  ],
+  "names": [],
+  "mappings": "AACC,IAAI,eAAC,CAAC,AACL,KAAK,CAAE,GAAG,AACX,CAAC,AACD,EAAE,eAAC,CAAC,AACH,WAAW,CAAE,aAAa,CAAC,CAAC,KAAK,CACjC,SAAS,CAAE,IAAI,AAChB,CAAC,AAED,CAAC,eAAC,CAAC,AACF,WAAW,CAAE,aAAa,CAAC,CAAC,KAAK,AAClC,CAAC"
+}
