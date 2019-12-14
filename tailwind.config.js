@@ -2,8 +2,8 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        'primary': '#ffe66d',
-        'secondary': '#4ecdc4',
+        primary: '#ffe66d',
+        secondary: '#4ecdc4',
       },
       fontSize: {
         '10xl': '10rem',

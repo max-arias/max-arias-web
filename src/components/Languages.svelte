@@ -4,11 +4,8 @@
 
     import Loader from './Loader.svelte'
 
-    const languagesUsedLast30 = 'https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/4c0e3f27-6d59-4db3-be73-d8838fe714a4.json';
-    const codingActivityLast30 = 'https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/02077329-8784-4967-afbc-d98c5f10274a.json';
-
+    const languagesUsedLast30 = 'https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/051d9b50-20fc-450a-b542-06a0572ebf3f.json';
     let languageData = [];
-    let totalTimeSpent = 0;
 
     onMount(function() {
         jsonp(languagesUsedLast30, null, function(err, data) {
@@ -20,56 +17,40 @@
                     languageData = languageData.sort(function(a, b) {
                         return b.percent - a.percent;
                     })
-
-                    console.log(languageData)
-                }
-            }
-        });
-
-        jsonp(codingActivityLast30, null, function(err, data) {
-            if (err) {
-                console.error(err.message);
-            } else {
-                if(data.data) {
-                    Object.keys(data.data).forEach(key => {
-                        if (data.data[key].grand_total.total_seconds) {
-                            totalTimeSpent += data.data[key].grand_total.total_seconds;
-                        }
-                    });
+                    languageData = languageData.filter(item => item.name !== 'Other');
+                    languageData = languageData.splice(0, 5);
                 }
             }
         });
     });
 
     const wordConcat = item => {
-        if (item.index === languageData.length - 1) {
-            return '.';
+        if (item.index === languageData.length) {
+            return '. ';
         }
 
         if (item.index === languageData.length - 2) {
-            return ' and';
+            return ' and ';
         }
         
-        return ','
-    }
-
-    const timespent = () => {
-        // return {totalTimeSpentHours()} hours and {totalTimeSpentMinutes()} minutes
-        return 'lalala'
+        return ', '
     }
 
 </script>
 
-<style lang="postcss"></style>
+<style>
+    .languages-used {
+        padding-left: 24px;
+    }
+</style>
 
-<div class="my-work">
-    <p>In the last month, I've worked on: {#if !languageData.length} <Loader /> {/if}</p>
-    {#if languageData.length}
-        {#each languageData as language}
-            <span class="{language.name.toLowerCase()} text-xl">{language.name}{wordConcat(language)} </span>
-        {/each}
-    {/if}
-    <p>Spending a total of {timespent()}.</p>
+<div class="languages-used text-secondary flex flex-col mt-8">
+    <div clas="w-full flex flex-row">
+        <span class="text-lg">In the <span class="underline">7</span> days, I've worked on: {#if !languageData.length} <Loader /> {/if}</span>
+        {#if languageData.length}
+            {#each languageData as language}
+                <span class="{language.name.toLowerCase()} text-xl pl-1">{language.name}{wordConcat(language)} </span>
+            {/each}
+        {/if}
+    </div>
 </div>
-
-<div>projects down here</div>
