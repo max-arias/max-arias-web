@@ -7,7 +7,15 @@ module.exports = {
       },
       fontSize: {
         '10xl': '10rem',
-      },  
+      },
+      margin: {
+        '-11': '-2.6rem',
+        '-14': '-3.6rem'
+      },
+      lineHeight: {
+        looseRem: '2rem',
+        extraLoose: '20rem'
+      }
     },
   },
   variants: {},

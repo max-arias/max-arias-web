@@ -1,6 +1,3 @@
-<script>
-    import Project from './Project.svelte';
-</script>
+<script></script>
 
-
-<Project videoId="X-AX2NCvzws" />
+<h1>Projects here</h1>
