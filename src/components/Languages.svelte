@@ -43,7 +43,9 @@
     });
 
     const wordConcat = item => {
-        if (item.index === languageData.length) {
+        console.log('item', item);
+        console.log('languageData', languageData);
+        if (item.index === languageData.length - 1) {
             return '. ';
         }
 
@@ -53,15 +55,14 @@
         
         return ', '
     }
-
 </script>
 
-<div class="languages-used text-secondary flex flex-col mt-8">
-    <div clas="w-full flex flex-row">
-        <span class="text-lg">In the last <span class="border-dotted border-b-2 border-teal-400 cursor-pointer" on:click={toggleDays}>{days}</span> days, I've worked on: {#if !languageData.length} <Loader /> {/if}</span>
+<div class="w-1/2 mt-8">
+    <div class="text-lg text-secondary">In the last <span class="border-dotted border-b-2 border-teal-400 cursor-pointer" on:click={toggleDays}>{days}</span> days, I've used...</div>
+    <div class="flex justify-center -mx-2 flex-wrap">
         {#if languageData.length}
             {#each languageData as language}
-                <span class="{language.name.toLowerCase()} text-xl pl-1">{language.name}{wordConcat(language)} </span>
+                <span class="{language.name.toLowerCase()} text-xl pl-1 text-secondary">{language.name}{wordConcat(language)} </span>
             {/each}
         {/if}
     </div>
