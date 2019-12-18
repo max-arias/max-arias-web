@@ -1,14 +1,14 @@
 <style>
-	body, html {
+	:global(body) {
 		font-family: 'Roboto Slab', serif;
-		background-color: #f7fff7;
+		background-color: #fdfffc;
 	}
 
-	::selection {
-		background: #ff6b6b;
+	:global(::selection) {
+		background: #ff9f1c;
 	}
-	::-moz-selection {
-		background: #ff6b6b;
+	:global(::-moz-selection) {
+		background: #ff9f1c;
 	}
 </style>
 
@@ -28,7 +28,7 @@
 					<h1 class="text-primary font-semibold text-10xl">Hey!</h1>
 					<div class="text-3xl lg:text-6xl text-secondary leading-loose mr-12 lg:mr-0 -mt-14 lg:mt-0 lg:mb-4">I'm <span class="">Max</span></div>
 				</div>
-				<div class="text-secondary text-xl leading-none lg:-mt-11 lg:-ml-11 mt-4 lg:mt-0">
+				<div class="text-secondary text-xl leading-none lg:-mt-12 lg:-ml-11 mt-4 lg:mt-0">
 					<span class="lg:ml-12 lg:mr-12">I'm a full-stack web</span>
 					<span> dev. <span class="flex lg:flex-none lg:inline mt-4 lg:mt-0 items-end lg:items-baseline leading-looseRem lg:leading-none">How can I help?
 						<a class="text-3xl" target="_blank" href="https://github.com/max-arias/" alt="Github"><i class="lab la-github"></i></a>

@@ -2,8 +2,8 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        primary: '#ffe66d',
-        secondary: '#4ecdc4',
+        primary: '#f71735',
+        secondary: '#011627',
       },
       fontSize: {
         '10xl': '10rem',
@@ -15,6 +15,9 @@ module.exports = {
       lineHeight: {
         looseRem: '2rem',
         extraLoose: '20rem'
+      },
+      borderColor: {
+        primary: '#a23e48'
       }
     },
   },

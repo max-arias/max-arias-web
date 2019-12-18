@@ -43,8 +43,6 @@
     });
 
     const wordConcat = item => {
-        console.log('item', item);
-        console.log('languageData', languageData);
         if (item.index === languageData.length - 1) {
             return '. ';
         }
@@ -58,7 +56,7 @@
 </script>
 
 <div class="w-1/2 mt-8">
-    <div class="text-lg text-secondary">In the last <span class="border-dotted border-b-2 border-teal-400 cursor-pointer" on:click={toggleDays}>{days}</span> days, I've used...</div>
+    <div class="text-lg text-secondary">In the last <span class="border-dotted border-b-2 border-primary cursor-pointer" on:click={toggleDays}>{days}</span> days, I've used</div>
     <div class="flex justify-center -mx-2 flex-wrap">
         {#if languageData.length}
             {#each languageData as language}
