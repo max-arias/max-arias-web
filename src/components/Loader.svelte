@@ -29,4 +29,4 @@
         100% { opacity: 0; }
     }
 </style>
-<span class="ellipsis-animated"><span>.</span><span>.</span><span>.</span></span>
+<span class="ellipsis-animated text-secondary"><span>.</span><span>.</span><span>.</span></span>

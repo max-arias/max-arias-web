@@ -2,27 +2,27 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        primary: '#f71735',
-        secondary: '#011627',
+        primary: '#fdfffc',
+        secondary: '#f0f3bd',
       },
       fontSize: {
         '10xl': '10rem',
       },
       margin: {
         '-11': '-2.6rem',
-        '-14': '-3.6rem'
+        '-14': '-3.6rem',
+        '-custom-3.2': '-3.2rem',
+        'custom-4.5': '4.5rem',
       },
       lineHeight: {
         looseRem: '2rem',
         extraLoose: '20rem'
       },
       borderColor: {
-        primary: '#a23e48'
+        primary: '#007ea7'
       }
     },
   },
   variants: {},
   plugins: []
 }
-
-// https://coolors.co/1a535c-4ecdc4-f7fff7-ff6b6b-ffe66d

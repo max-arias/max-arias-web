@@ -8,7 +8,7 @@
     const languagesUsedLast30 = 'https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/4c0e3f27-6d59-4db3-be73-d8838fe714a4.json';
 
     let languageData = [];
-    let days = 7;
+    let days = 30;
 
     const fetchLanguages = async (days) => {
         const fetchUrl = (days === 30) ? languagesUsedLast30 : languagesUsedLast7;
@@ -26,6 +26,8 @@
                         })
                         res = res.filter(item => item.name !== 'Other');
                         res = res.splice(0, 5);
+
+                        res = res.map(item => item.name);
                         resolve(res);
                     }
                 }
@@ -33,35 +35,23 @@
         })
     }
 
-    const toggleDays = async () => {
-        days = (days === 7) ? 30 : 7;
-        languageData = await fetchLanguages(days);
-    }
-
     onMount(async () => {
         languageData = await fetchLanguages();
     });
 
-    const wordConcat = item => {
-        if (item.index === languageData.length - 1) {
-            return '. ';
-        }
+    const buildLanguages = () => {
+        const langStr = languageData.slice(0, languageData.length - 1).join(', ') + ` and ${languageData[languageData.length - 1]}`
 
-        if (item.index === languageData.length - 2) {
-            return ' and ';
-        }
-        
-        return ', '
+        return `<span class="text-xl pl-1 text-secondary">${langStr}</span>`;
     }
 </script>
 
-<div class="w-1/2 mt-8">
-    <div class="text-lg text-secondary">In the last <span class="border-dotted border-b-2 border-primary cursor-pointer" on:click={toggleDays}>{days}</span> days, I've used</div>
-    <div class="flex justify-center -mx-2 flex-wrap">
-        {#if languageData.length}
-            {#each languageData as language}
-                <span class="{language.name.toLowerCase()} text-xl pl-1 text-secondary">{language.name}{wordConcat(language)} </span>
-            {/each}
-        {/if}
-    </div>
+<div class="w-1/2 mt-4">
+    <div class="text-lg text-secondary">In the last {days} days, I've worked with:</div>
+    {#if languageData.length}
+        <div class="flex justify-center -mx-2 flex-wrap">{@html buildLanguages()}</div>
+    {:else}
+        <Loader />
+    {/if}
+    
 </div>
