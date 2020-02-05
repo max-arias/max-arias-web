@@ -17,6 +17,7 @@
 </style>
 
 <script>
+	import Tailwindcss from './Tailwind.svelte';
 	import { onMount } from 'svelte'
 	import Languages from './components/Languages.svelte';
 

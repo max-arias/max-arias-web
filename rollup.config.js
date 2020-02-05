@@ -3,10 +3,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import postcss from 'rollup-plugin-postcss';
 import autoPreprocess from 'svelte-preprocess';
 
-const production = !process.env.ROLLUP_WATCH;
+const production = process.env.NODE_ENV === 'production';
 
 export default {
     input: 'src/main.js',
@@ -29,9 +28,6 @@ export default {
                 css.write('public/bundle.css');
             },
         }),
-        postcss({
-            extract: 'public/utils.css',
-        }),
 
         // If you have external dependencies installed from
         // npm, you'll most likely need these plugins. In
@@ -40,7 +36,7 @@ export default {
         // https://github.com/rollup/rollup-plugin-commonjs
         resolve({
             browser: true,
-            dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/'),
+            dedupe: ['svelte']
         }),
         commonjs(),
 
