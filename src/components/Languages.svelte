@@ -4,17 +4,14 @@
 
     import Loader from './Loader.svelte'
 
-    const languagesUsedLast7 = 'https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/051d9b50-20fc-450a-b542-06a0572ebf3f.json';
     const languagesUsedLast30 = 'https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/4c0e3f27-6d59-4db3-be73-d8838fe714a4.json';
 
     let languageData = [];
-    let days = 30;
 
-    const fetchLanguages = async (days) => {
-        const fetchUrl = (days === 30) ? languagesUsedLast30 : languagesUsedLast7;
+    const fetchLanguages = async () => {
 
         return new Promise((resolve, reject) => {
-            jsonp(fetchUrl, null, function(err, data) {
+            jsonp(languagesUsedLast30, null, function(err, data) {
                 if (err) {
                     console.error(err.message);
                     reject(err);
@@ -46,10 +43,15 @@
     }
 </script>
 
-<div class="w-1/2 mt-4">
-    <div class="text-lg text-secondary">In the last {days} days, I've worked with:</div>
+<div class="w-full mt-4">
+    <div class="text-lg text-secondary">In the last 30 days, I've worked with:</div>
     {#if languageData.length}
-        <div class="flex justify-center -mx-2 flex-wrap">{@html buildLanguages()}</div>
+        <div class="flex justify-center -mx-2 flex-wrap">
+            {@html buildLanguages()}
+            <div class="text-lg text-secondary" alt="View Wakatime 30 days stats image">
+                <a target="_blank" rel="noopener" href="https://wakatime.com/share/@64b889a6-18f2-44e2-8192-24c1d569918b/01f617a9-f99e-4658-971a-903f22aae09e.png"><i class="las la-info"></i></a>
+            </div>
+        </div>
     {:else}
         <Loader />
     {/if}
