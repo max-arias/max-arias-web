@@ -24,5 +24,6 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: []
+  plugins: [],
+  purge: ['./public/index.html', './src/**/*.{svelte,js,ts}'],
 }

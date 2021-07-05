@@ -40,10 +40,10 @@
 			<div class="content p-8 lg:p-0 lg:mt-0 flex flex-col items-center">
 				<div class="flex flex-col lg:flex-row items-center lg:items-end justify-center">
 					<h1 class="text-primary font-semibold text-10xl">Hey!</h1>
-					<div class="text-3xl lg:text-6xl text-secondary leading-loose mr-12 lg:mr-0 -mt-16 lg:mt-0 lg:mb-4">I'm <span class="">Max</span></div>
+					<div class="text-3xl lg:text-6xl text-secondary leading-loose mr-12 lg:mr-0 -mt-16 lg:mt-0 lg:mb-12">I'm <span class="">Max</span></div>
 				</div>
-				<div class="text-secondary text-xl leading-none lg:-mt-custom-3.2 lg:-ml-11 mt-4 lg:mt-0 mb-4">
-					<span class="lg:ml-custom-4.5 lg:mr-12">I'm a full-stack web</span>
+				<div class="text-secondary text-xl leading-none lg:-mt-custom-3.2 lg:-ml-11 mt-4 mb-4">
+					<span class="lg:ml-20 lg:mr-12">I'm a full-stack web</span>
 					<span> dev. <span class="flex lg:flex-none lg:inline mt-4 lg:mt-0 items-end lg:items-baseline leading-looseRem lg:leading-none">How can I help?
 						<a class="text-3xl" rel="noopener" target="_blank" href="https://github.com/max-arias/" alt="Github repository"><i class="lab la-github"></i></a>
 						<a class="text-3xl" rel="noopener" target="_blank" href="mailto:max@max-arias.com" alt="Email"><i class="las la-envelope-open"></i></a>
