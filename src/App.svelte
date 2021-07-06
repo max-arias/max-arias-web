@@ -1,12 +1,24 @@
 <script>
   import "./Tailwind.svelte";
   import { onMount } from "svelte";
+
   import Languages from "./components/Languages.svelte";
+  import Modal from "./components/Modal.svelte";
 
   import BIRDS from "vanta/dist/vanta.birds.min";
   import DOTS from "vanta/dist/vanta.dots.min";
   import WAVES from "vanta/dist/vanta.waves.min";
   import TOPOLOGY from "vanta/dist/vanta.topology.min";
+
+  let showModal = false;
+
+  const closeModal = () => {
+    showModal = false;
+  };
+
+  const openModal = () => {
+    showModal = true;
+  };
 
   onMount(async () => {
     const effects = [
@@ -90,7 +102,10 @@
           >
         </div>
         <hr class="border-gray-600 w-1/2" />
-        <Languages />
+        <Languages on:open-modal={openModal} />
+        {#if showModal}
+          <Modal on:close-modal={closeModal} />
+        {/if}
       </div>
     </div>
   </div>
