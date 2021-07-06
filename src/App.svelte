@@ -16,13 +16,11 @@
       },
       { fn: DOTS, settings: { size: 2.0, spacing: 15.0 } },
       { fn: WAVES, settings: { waveSpeed: 0.3 } },
-      {
-        fn: TOPOLOGY,
-        settings: {},
-      },
+      { fn: TOPOLOGY, settings: {} },
     ];
 
     const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+
     // @ts-ignore
     randomEffect.fn({
       el: "#main-container",
