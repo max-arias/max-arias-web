@@ -95,7 +95,7 @@
                 class="text-3xl"
                 rel="noopener"
                 target="_blank"
-                href="https://docs.google.com/document/d/1jMSCf--FFsMnsexGzTLq5luQsuyOw96XYvLsLNeb72U/edit?usp=sharing"
+                href="https://drive.google.com/file/d/10Qbd9P8brhowVMgPhRDZfofBrmqYNaNF/view?usp=sharing"
                 alt="Resume"><i class="lar la-address-card" /></a
               >
             </span></span
