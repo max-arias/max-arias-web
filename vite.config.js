@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
-import sveltePreprocess from 'svelte-preprocess';
+import postcss from './postcss.config.cjs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte({
-    preprocess: sveltePreprocess({ postcss: true }),
-  })],
+  plugins: [svelte()],
   rollupDedupe: ['svelte'],
+  css:{
+    postcss
+  }
 })

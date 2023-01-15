@@ -25,9 +25,5 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-  purge: {
-    enabled: !process.env.ROLLUP_WATCH,
-    mode: 'all',
-    content: ['./public/index.html', './src/**/*.svelte'],
-  },
+  content: ['./public/index.html', './src/**/*.svelte'],
 }

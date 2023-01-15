@@ -1,5 +1,5 @@
 <script>
-  import "./Tailwind.svelte";
+  import "./app.css";
   import { onMount } from "svelte";
 
   import Languages from "./components/Languages.svelte";
