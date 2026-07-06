@@ -1,0 +1,5 @@
+name = "max-arias-web"
+compatibility_date = "2026-07-06"
+
+[assets]
+directory = "./dist"
