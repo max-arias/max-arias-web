@@ -8,6 +8,11 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10"
+  },
+  "packageManager": "npm@10.9.2",
   "type": "module",
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.2",
