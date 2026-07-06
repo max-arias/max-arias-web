@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.max-arias.com/#person",
+  name: "Maximiliano Arias",
+  alternateName: "Max Arias",
+  givenName: "Maximiliano",
+  familyName: "Arias",
+  url: "https://www.max-arias.com/",
+  jobTitle: "Frontend platform and mobile engineer",
+  description:
+    "Frontend platform and mobile engineer specializing in frontend architecture, React Native, browser extensions, shared UI systems, and performance-focused web products.",
+  sameAs: [
+    "https://www.linkedin.com/in/maxarias/",
+    "https://github.com/max-arias/",
+    "https://product.ai/about/max-arias/",
+  ],
+  knowsAbout: [
+    "Frontend architecture",
+    "React Native",
+    "Mobile development",
+    "Browser extensions",
+    "Design systems",
+    "Shared UI systems",
+    "Performance engineering",
+    "Cloudflare Workers",
+    "Astro",
+    "Svelte",
+    "TypeScript",
+  ],
+};
+---
+
+<BaseLayout
+  title="Maximiliano Arias | Frontend Platform and Mobile Engineer"
+  description="Frontend platform and mobile engineer specializing in frontend architecture, React Native, browser extensions, shared UI systems, and performance-focused web products."
+  canonical="https://www.max-arias.com/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+  </Fragment>
+  <main class="mx-auto min-h-screen max-w-page px-6 py-14 sm:px-8 sm:py-20 fade-in-page">
+    <div class="mx-auto max-w-2xl">
+      <header class="mb-14 fade-in-up" style="--fade-delay: 80ms;">
+        <div class="mb-6">
+          <h1 class="text-[1.85rem] font-semibold tracking-[-0.035em] text-white sm:text-[2rem]">Maximiliano Arias</h1>
+          <p class="mt-1 text-[0.95rem] text-white/52">Frontend platform and mobile engineer</p>
+        </div>
+
+        <div class="space-y-4">
+          <p class="max-w-[34rem] text-[1.05rem] leading-[1.75] text-white/76 sm:text-[1.08rem]">
+            I help product teams simplify complex frontends, ship web and React Native products, and build stronger shared UI systems.
+          </p>
+          <p class="max-w-[34rem] text-[0.95rem] leading-[1.7] text-white/48">
+            Frontend architecture, React Native, browser extensions, design systems, and performance work.
+          </p>
+        </div>
+
+        <nav class="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem] text-white/58">
+          <a class="button-link" href="mailto:max@max-arias.com">Email</a>
+          <a class="button-link" href="https://www.linkedin.com/in/maxarias/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button-link" href="https://github.com/max-arias/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button-link" href="/resume">CV</a>
+        </nav>
+      </header>
+
+      <div class="space-y-12">
+        <section class="section-block fade-in-up" style="--fade-delay: 180ms;">
+          <div class="section-heading-row">
+            <h2 class="section-label">Selected work</h2>
+            <span class="section-note">Recent</span>
+          </div>
+
+          <div class="space-y-7">
+            <article class="entry">
+              <div class="entry-header">
+                <h3>Demand.io / Product.ai</h3>
+                <span>2021–Present</span>
+              </div>
+              <p>
+                Frontend lead across web, browser extension, blog, integration, and mobile surfaces. Shipped on Astro, Svelte, Cloudflare Workers, and React Native.
+              </p>
+            </article>
+
+            <article class="entry">
+              <div class="entry-header">
+                <h3>Truelogic Software</h3>
+                <span>2011–2021</span>
+              </div>
+              <p>
+                Performance and maintainability work for teams including LeafLink, Minted, SoulCycle, and Evernote.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block fade-in-up" style="--fade-delay: 280ms;">
+          <div class="section-heading-row">
+            <h2 class="section-label">Contact</h2>
+            <span class="section-note">Available</span>
+          </div>
+
+          <p class="max-w-[32rem] text-[0.96rem] leading-[1.75] text-white/62">
+            Available for consulting on frontend architecture, platform resets, shared UI systems, and extension work.
+            <a href="mailto:max@max-arias.com" class="inline-link">max@max-arias.com</a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
