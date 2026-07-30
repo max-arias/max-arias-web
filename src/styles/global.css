@@ -121,6 +121,18 @@
   .entry p {
     @apply max-w-[34rem] text-[0.95rem] leading-[1.72] text-white/58;
   }
+
+  .entry h3 a {
+    @apply underline decoration-white/12 underline-offset-4 transition-colors duration-150 hover:text-accent hover:decoration-accent/45;
+  }
+
+  .entry .entry-meta {
+    @apply text-[0.78rem] leading-[1.6] text-white/34;
+  }
+
+  .entry-meta span {
+    @apply mr-1 text-white/46;
+  }
 }
 
 @keyframes fade-in {

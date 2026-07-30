@@ -32,6 +32,27 @@ const personSchema = {
     "TypeScript",
   ],
 };
+
+const petProjects = [
+  {
+    name: "movies-that-feel-like",
+    href: "https://movies-that-feel-like.max-c82.workers.dev/",
+    description: "A read-only discovery site built from Reddit movie recommendations.",
+    technologies: "Astro · Cloudflare Pages/Workers · D1 · Python · Tailwind CSS · daisyUI",
+  },
+  {
+    name: "sff-website",
+    href: "https://sff-pc-builder.max-c82.workers.dev/",
+    description: "A fitment engine for planning small-form-factor PC builds.",
+    technologies: "Astro · Tailwind CSS · Cloudflare D1 · TypeScript",
+  },
+  {
+    name: "poe-shopping-list",
+    href: "https://github.com/max-arias/poe-shopping-list",
+    description: "A local-only Path of Exile shopping-list browser extension.",
+    technologies: "WXT · Vue 3 · Pinia · Zod · Tailwind CSS · VitePlus",
+  },
+];
 ---
 
 <BaseLayout
@@ -94,6 +115,27 @@ const personSchema = {
                 Performance and maintainability work for teams including LeafLink, Minted, SoulCycle, and Evernote.
               </p>
             </article>
+          </div>
+        </section>
+
+        <section class="section-block fade-in-up" style="--fade-delay: 240ms;" aria-labelledby="pet-projects-heading">
+          <div class="section-heading-row">
+            <h2 id="pet-projects-heading" class="section-label">Pet projects</h2>
+            <span class="section-note">Personal</span>
+          </div>
+
+          <div class="space-y-7">
+            {petProjects.map((project) => (
+              <article class="entry">
+                <div class="entry-header">
+                  <h3>
+                    <a href={project.href} target="_blank" rel="noreferrer">{project.name}</a>
+                  </h3>
+                </div>
+                <p>{project.description}</p>
+                <p class="entry-meta"><span>Built with</span> {project.technologies}</p>
+              </article>
+            ))}
           </div>
         </section>
 
