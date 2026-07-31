@@ -3,33 +3,53 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const personSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://www.max-arias.com/#person",
-  name: "Maximiliano Arias",
-  alternateName: "Max Arias",
-  givenName: "Maximiliano",
-  familyName: "Arias",
-  url: "https://www.max-arias.com/",
-  jobTitle: "Frontend platform and mobile engineer",
-  description:
-    "Frontend platform and mobile engineer specializing in frontend architecture, React Native, browser extensions, shared UI systems, and performance-focused web products.",
-  sameAs: [
-    "https://www.linkedin.com/in/maxarias/",
-    "https://github.com/max-arias/",
-    "https://product.ai/about/max-arias/",
-  ],
-  knowsAbout: [
-    "Frontend architecture",
-    "React Native",
-    "Mobile development",
-    "Browser extensions",
-    "Design systems",
-    "Shared UI systems",
-    "Performance engineering",
-    "Cloudflare Workers",
-    "Astro",
-    "Svelte",
-    "TypeScript",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.max-arias.com/#person",
+      name: "Maximiliano Arias",
+      alternateName: "Max Arias",
+      url: "https://www.max-arias.com/",
+      jobTitle: "Staff Front-End Engineer / Frontend Fortress Lead",
+      description:
+        "Senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems.",
+      sameAs: [
+        "https://www.linkedin.com/in/maxarias/",
+        "https://github.com/max-arias/",
+        "https://product.ai/about/max-arias/",
+      ],
+      knowsAbout: [
+        "Frontend platform engineering",
+        "Browser extensions",
+        "Shared frontend infrastructure",
+        "Cross-product design systems",
+        "TypeScript and JavaScript",
+        "Vue and Nuxt",
+        "React Native and Expo",
+        "Design systems and shared component libraries",
+        "CI/CD and release automation",
+        "Headless CMS and Git-based publishing",
+        "Cloudflare Workers",
+        "AI chat, retrieval, and evaluation",
+        "Testing, metadata, and schema",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.max-arias.com/#website",
+      url: "https://www.max-arias.com/",
+      name: "Maximiliano Arias",
+      description: "The professional homepage of Maximiliano Arias.",
+      publisher: { "@id": "https://www.max-arias.com/#person" },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://www.max-arias.com/#profilepage",
+      url: "https://www.max-arias.com/",
+      name: "Maximiliano Arias | Senior Frontend Platform Engineer",
+      isPartOf: { "@id": "https://www.max-arias.com/#website" },
+      mainEntity: { "@id": "https://www.max-arias.com/#person" },
+    },
   ],
 };
 
@@ -56,8 +76,8 @@ const petProjects = [
 ---
 
 <BaseLayout
-  title="Maximiliano Arias | Frontend Platform and Mobile Engineer"
-  description="Frontend platform and mobile engineer specializing in frontend architecture, React Native, browser extensions, shared UI systems, and performance-focused web products."
+  title="Maximiliano Arias | Senior Frontend Platform Engineer"
+  description="Senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems."
   canonical="https://www.max-arias.com/"
 >
   <Fragment slot="head">
@@ -68,15 +88,15 @@ const petProjects = [
       <header class="mb-14 fade-in-up" style="--fade-delay: 80ms;">
         <div class="mb-6">
           <h1 class="text-[1.85rem] font-semibold tracking-[-0.035em] text-white sm:text-[2rem]">Maximiliano Arias</h1>
-          <p class="mt-1 text-[0.95rem] text-white/52">Frontend platform and mobile engineer</p>
+          <p class="mt-1 text-[0.95rem] text-white/52">Senior frontend / frontend platform engineer</p>
         </div>
 
         <div class="space-y-4">
           <p class="max-w-[34rem] text-[1.05rem] leading-[1.75] text-white/76 sm:text-[1.08rem]">
-            I help product teams simplify complex frontends, ship web and React Native products, and build stronger shared UI systems.
+            I am a senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems.
           </p>
           <p class="max-w-[34rem] text-[0.95rem] leading-[1.7] text-white/48">
-            Frontend architecture, React Native, browser extensions, design systems, and performance work.
+            My toolkit spans TypeScript and JavaScript, Vue/Nuxt, and React Native/Expo, with a focus on design systems, shared component libraries, and CI/CD and release automation. I also work with headless CMS and Git-based publishing, Cloudflare Workers/KV/R2, AI chat, retrieval and evaluation, and testing, metadata, and schema.
           </p>
         </div>
 
@@ -89,9 +109,9 @@ const petProjects = [
       </header>
 
       <div class="space-y-12">
-        <section class="section-block fade-in-up" style="--fade-delay: 180ms;">
+        <section class="section-block fade-in-up" style="--fade-delay: 180ms;" aria-labelledby="selected-work-heading">
           <div class="section-heading-row">
-            <h2 class="section-label">Selected work</h2>
+            <h2 id="selected-work-heading" class="section-label">Selected work</h2>
             <span class="section-note">Recent</span>
           </div>
 
@@ -99,20 +119,20 @@ const petProjects = [
             <article class="entry">
               <div class="entry-header">
                 <h3>Demand.io / Product.ai</h3>
-                <span>2021–Present</span>
+                <span><time datetime="2021-09">September 2021</time>–Present</span>
               </div>
               <p>
-                Frontend lead across web, browser extension, blog, integration, and mobile surfaces. Shipped on Astro, Svelte, Cloudflare Workers, and React Native.
+                Since September 2021, as Staff Front-End Engineer / Frontend Fortress Lead, I have worked across SimplyCodes, Dealspotr, Knoji, and Product.ai on web, browser extension, mobile, and shared UI. Selected work includes SimplyCodes modernization across routing, canonicalization, testing, and release flow; a WXT reset with multiplatform releases, Safari, analytics, and Jenkins-to-GitHub Actions; cross-product design systems and shared infrastructure; CMS and Git-based publishing delivered with Cloudflare Workers/KV/R2; Product.ai Cloudflare Worker site, Research Hub, recruiting, and schema JSON-LD; AI chat, trust, evidence, extension-connected shopping, and retrieval prototypes; and synthetic-monitoring readiness, SEO safety, operational, and performance fixes.
               </p>
             </article>
 
             <article class="entry">
               <div class="entry-header">
                 <h3>Truelogic Software</h3>
-                <span>2011–2021</span>
+                <span><time datetime="2011">2011</time>–<time datetime="2021">2021</time></span>
               </div>
               <p>
-                Performance and maintainability work for teams including LeafLink, Minted, SoulCycle, and Evernote.
+                Selected engagements included LeafLink, Minted, SoulCycle, and Evernote. At LeafLink, I reduced bundle and image payloads by roughly 30%; at Minted, I built Lighthouse/Puppeteer tooling for synthetic performance metrics.
               </p>
             </article>
           </div>
@@ -139,9 +159,9 @@ const petProjects = [
           </div>
         </section>
 
-        <section class="section-block fade-in-up" style="--fade-delay: 280ms;">
+        <section class="section-block fade-in-up" style="--fade-delay: 280ms;" aria-labelledby="contact-heading">
           <div class="section-heading-row">
-            <h2 class="section-label">Contact</h2>
+            <h2 id="contact-heading" class="section-label">Contact</h2>
             <span class="section-note">Available</span>
           </div>
 

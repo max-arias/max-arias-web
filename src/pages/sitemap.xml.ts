@@ -1,6 +1,5 @@
 const urls = [
   "https://www.max-arias.com/",
-  "https://www.max-arias.com/resume",
 ];
 
 export function GET() {

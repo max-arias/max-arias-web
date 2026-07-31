@@ -2,8 +2,8 @@
 import "../styles/global.css";
 
 const {
-  title = "Maximiliano Arias | Frontend Platform Engineer",
-  description = "Senior frontend platform engineer helping product teams modernize complex frontends, design systems, browser extensions, and performance-critical web products.",
+  title = "Maximiliano Arias | Senior Frontend Platform Engineer",
+  description = "Senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems.",
   canonical = "https://www.max-arias.com/",
 } = Astro.props;
 ---
@@ -15,7 +15,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.ico" />
@@ -25,8 +25,9 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Maximiliano Arias" />
+    <meta property="og:locale" content="en_US" />
 
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
