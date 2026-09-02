@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const petProjects = [
+  {
+    name: "movies-that-feel-like",
+    href: "https://movies-that-feel-like.max-c82.workers.dev/",
+    description: "A read-only discovery site built from Reddit movie recommendations.",
+    technologies: "Astro · Cloudflare Pages/Workers · D1 · Python · Tailwind CSS · daisyUI",
+  },
+  {
+    name: "sff-website",
+    href: "https://sff-pc-builder.max-c82.workers.dev/",
+    description: "A fitment engine for planning small-form-factor PC builds.",
+    technologies: "Astro · Tailwind CSS · Cloudflare D1 · TypeScript",
+  },
+  {
+    name: "poe-shopping-list",
+    href: "https://github.com/max-arias/poe-shopping-list",
+    description: "A local-only Path of Exile shopping-list browser extension.",
+    technologies: "WXT · Vue 3 · Pinia · Zod · Tailwind CSS · VitePlus",
+  },
+];
+---
+
+<BaseLayout
+  title="Pet projects | Maximiliano Arias"
+  description="Personal projects by Maximiliano Arias, including small web products and a local-only browser extension."
+  canonical="https://www.max-arias.com/pet-projects"
+>
+  <main class="mx-auto min-h-screen max-w-page px-6 py-14 sm:px-8 sm:py-20 fade-in-page">
+    <div class="mx-auto max-w-2xl">
+      <header class="mb-14 fade-in-up" style="--fade-delay: 80ms;">
+        <a class="button-link" href="/">← Back to home</a>
+        <div class="mt-10">
+          <p class="section-label mb-4">Personal</p>
+          <h1 class="text-[1.85rem] font-semibold tracking-[-0.035em] text-white sm:text-[2rem]">Pet projects</h1>
+          <p class="mt-4 max-w-[34rem] text-[1.05rem] leading-[1.75] text-white/62 sm:text-[1.08rem]">
+            Small, useful experiments built around the things I enjoy exploring outside client work.
+          </p>
+        </div>
+      </header>
+
+      <section class="section-block fade-in-up" style="--fade-delay: 180ms;" aria-labelledby="projects-heading">
+        <div class="section-heading-row">
+          <h2 id="projects-heading" class="section-label">Projects</h2>
+          <span class="section-note">Built and maintained</span>
+        </div>
+
+        <div class="space-y-7">
+          {petProjects.map((project) => (
+            <article class="entry">
+              <div class="entry-header">
+                <h3>
+                  <a href={project.href} target="_blank" rel="noreferrer">{project.name}</a>
+                </h3>
+              </div>
+              <p>{project.description}</p>
+              <p class="entry-meta"><span>Built with</span> {project.technologies}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

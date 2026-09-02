@@ -1,0 +1,163 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import imageMap from "../data/game-dev-og-images.json";
+import siteIconMap from "../data/game-dev-site-icons.json";
+
+const {
+  title = "Game dev resources",
+  description = "A practical, editable field guide to game-development assets, references, and tools.",
+  canonical = "https://www.max-arias.com/game-dev",
+  updated = "2026-09-02",
+} = Astro.props;
+
+const updatedLabel = new Intl.DateTimeFormat("en", {
+  dateStyle: "long",
+  timeZone: "UTC",
+}).format(new Date(`${updated}T00:00:00Z`));
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <main class="game-dev-page">
+    <div class="game-dev-shell">
+      <a class="game-dev-back" href="/">← Back to home</a>
+      <header class="game-dev-hero">
+        <h1>{title}</h1>
+        <p class="game-dev-lede">I keep this list when I dabble in game development as a hobby, tracking useful assets, audio, references, and tools. It is a short, editable shelf of things worth returning to.</p>
+        <time class="game-dev-updated" datetime={updated}>Last updated {updatedLabel}</time>
+      </header>
+      <article class="game-dev-content">
+        <slot />
+      </article>
+    </div>
+  </main>
+</BaseLayout>
+
+<script is:inline define:vars={{ imageMap, siteIconMap }}>
+  const addResourceThumbnails = () => {
+    const excludedSections = new Set(["licence guide", "sources & attribution"]);
+    const headings = [...document.querySelectorAll(".game-dev-content h2")];
+
+    document.querySelectorAll(".game-dev-content li").forEach((row) => {
+      const section = headings
+        .filter((heading) => heading.compareDocumentPosition(row) & Node.DOCUMENT_POSITION_FOLLOWING)
+        .at(-1);
+      if (section && excludedSections.has(section.textContent.trim().toLowerCase())) return;
+
+      const resourceLink = row.querySelector('a[href^="http"]');
+      const thumbnail = document.createElement("span");
+      thumbnail.className = "resource-thumbnail";
+      thumbnail.setAttribute("aria-hidden", "true");
+
+      const ogImageUrl = resourceLink && imageMap[resourceLink.href];
+      const siteIconUrl = resourceLink && siteIconMap[resourceLink.href];
+      const imageUrl = ogImageUrl || siteIconUrl;
+
+      if (resourceLink) {
+        const domain = new URL(resourceLink.href).hostname.replace(/^www\./, "");
+        const title = resourceLink.closest("strong");
+        if (title && !title.querySelector(".resource-domain")) {
+          const domainLabel = document.createElement("span");
+          domainLabel.className = "resource-domain";
+          domainLabel.textContent = ` (${domain})`;
+          title.append(domainLabel);
+        }
+      }
+
+      [...row.childNodes].some((node) => {
+        if (node.nodeType !== Node.TEXT_NODE) return false;
+        const text = node.textContent.replace(/^\s*—\s*/, "");
+        if (text === node.textContent) return false;
+        node.textContent = text;
+        return true;
+      });
+
+      if (imageUrl) {
+        const image = document.createElement("img");
+        image.src = imageUrl;
+        image.width = 80;
+        image.height = 52;
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.alt = "";
+        if (!ogImageUrl) image.classList.add("resource-thumbnail-icon");
+        let showingOgImage = Boolean(ogImageUrl);
+        image.addEventListener("error", () => {
+          if (showingOgImage && siteIconUrl) {
+            showingOgImage = false;
+            image.src = siteIconUrl;
+            image.classList.add("resource-thumbnail-icon");
+            return;
+          }
+          image.remove();
+          thumbnail.classList.add("resource-thumbnail-fallback");
+        });
+        thumbnail.append(image);
+      } else {
+        thumbnail.classList.add("resource-thumbnail-fallback");
+      }
+
+      const copy = document.createElement("span");
+      copy.className = "resource-row-copy";
+      while (row.firstChild) copy.append(row.firstChild);
+      row.append(thumbnail, copy);
+      row.classList.add("resource-row");
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addResourceThumbnails, { once: true });
+  } else {
+    addResourceThumbnails();
+  }
+</script>
+
+<style>
+  .game-dev-page { min-height: 100vh; }
+  .game-dev-shell { width: min(100% - 3rem, 62rem); margin: 0 auto; padding: 3.5rem 0 7rem; }
+  .game-dev-back { display: inline-flex; align-items: center; gap: .35rem; color: rgba(237,242,247,.55); font-size: .88rem; letter-spacing: -.01em; }
+  .game-dev-back:hover { color: var(--color-accent); }
+  .game-dev-hero { max-width: 47rem; padding: 4rem 0 3.5rem; }
+  .game-dev-hero h1 { margin: 0; color: var(--color-text); font-size: clamp(2.65rem, 8vw, 5.4rem); font-weight: 600; letter-spacing: -.055em; line-height: .98; }
+  .game-dev-lede { max-width: 39rem; margin: 1.75rem 0 0; color: rgba(237,242,247,.68); font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.75; }
+  .game-dev-updated { display: block; margin-top: 1.35rem; color: rgba(237,242,247,.38); font-size: .78rem; letter-spacing: .02em; }
+  .game-dev-content { max-width: 48rem; }
+  .game-dev-content :global(.resource-contents) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem 1rem; margin: 0 0 3.5rem; padding: 1rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .game-dev-content :global(.resource-contents a) { color: rgba(237,242,247,.62); font-size: .82rem; }
+  .game-dev-content :global(.resource-contents a:hover) { color: var(--color-accent); }
+  .game-dev-content :global(h2) { margin: 3.5rem 0 1.25rem; padding-top: 1.25rem; color: var(--color-text); font-size: clamp(1.55rem, 3vw, 2.1rem); font-weight: 550; letter-spacing: -.035em; line-height: 1.15; scroll-margin-top: 1.5rem; }
+  .game-dev-content :global(h2:first-of-type) { margin-top: 0; }
+  .game-dev-content :global(h3) { margin: 2rem 0 .75rem; color: rgba(237,242,247,.86); font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+  .game-dev-content :global(p) { max-width: 70ch; margin: 0 0 1rem; color: rgba(237,242,247,.63); font-size: .98rem; line-height: 1.75; }
+  .game-dev-content :global(ul) { margin: 0; padding: 0; list-style: none; }
+  .game-dev-content :global(li) { padding: 1rem 0 1.05rem; border-bottom: 1px solid rgba(176,192,208,.11); color: rgba(237,242,247,.6); font-size: .94rem; line-height: 1.65; }
+  .game-dev-content :global(li:first-child) { border-top: 1px solid rgba(176,192,208,.11); }
+  .game-dev-content :global(li strong) { color: rgba(237,242,247,.92); font-weight: 600; }
+  .game-dev-content :global(li a), .game-dev-content :global(p a) { color: var(--color-accent); text-decoration: underline; text-decoration-color: rgba(134,208,255,.35); text-underline-offset: .2em; }
+  .game-dev-content :global(li a:hover), .game-dev-content :global(p a:hover) { text-decoration-color: var(--color-accent); }
+  .game-dev-content :global(.resource-row) { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .game-dev-content :global(.resource-thumbnail) { display: block; width: 80px; height: 52px; overflow: hidden; border: 1px solid rgba(176,192,208,.14); background: rgba(176,192,208,.045); }
+  .game-dev-content :global(.resource-thumbnail img) { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .game-dev-content :global(.resource-thumbnail .resource-thumbnail-icon) { object-fit: contain; padding: .7rem; opacity: .62; filter: grayscale(1); }
+  .game-dev-content :global(.resource-thumbnail-fallback) { background: linear-gradient(135deg, rgba(134,208,255,.08), rgba(176,192,208,.025)); }
+  .game-dev-content :global(.resource-row-copy) { min-width: 0; }
+  .game-dev-content :global(.resource-row-copy strong) { display: block; margin-bottom: .25rem; }
+  .game-dev-content :global(.resource-domain) { color: rgba(237,242,247,.38); font-size: .72em; font-weight: 400; letter-spacing: .01em; white-space: nowrap; }
+  .game-dev-content :global(.callout) { margin: 1.5rem 0; padding: 1.25rem 1.35rem; border: 1px solid rgba(134,208,255,.25); background: var(--color-accent-soft); }
+  .game-dev-content :global(.callout p:last-child) { margin-bottom: 0; }
+  .game-dev-content :global(.contents-label) { margin: 0 0 .7rem; color: rgba(237,242,247,.38); font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+  @media (max-width: 600px) {
+    .game-dev-shell { width: min(100% - 2rem, 62rem); padding-top: 2rem; }
+    .game-dev-hero { padding: 3.25rem 0 2.75rem; }
+    .game-dev-content :global(.resource-contents) { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 2.75rem; }
+    .game-dev-content :global(.resource-row) { grid-template-columns: 64px minmax(0, 1fr); gap: .8rem; }
+    .game-dev-content :global(.resource-thumbnail) { width: 64px; height: 44px; }
+    .game-dev-content :global(h2) { margin-top: 2.75rem; }
+  }
+  @media (max-width: 390px) {
+    .game-dev-content :global(.resource-contents) { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .game-dev-hero { animation: game-dev-reveal 650ms cubic-bezier(.16,1,.3,1) both; }
+  }
+  @keyframes game-dev-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+</style>

@@ -1,5 +1,7 @@
 const urls = [
   "https://www.max-arias.com/",
+  "https://www.max-arias.com/pet-projects",
+  "https://www.max-arias.com/game-dev",
 ];
 
 export function GET() {

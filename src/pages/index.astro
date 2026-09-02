@@ -53,26 +53,6 @@ const personSchema = {
   ],
 };
 
-const petProjects = [
-  {
-    name: "movies-that-feel-like",
-    href: "https://movies-that-feel-like.max-c82.workers.dev/",
-    description: "A read-only discovery site built from Reddit movie recommendations.",
-    technologies: "Astro · Cloudflare Pages/Workers · D1 · Python · Tailwind CSS · daisyUI",
-  },
-  {
-    name: "sff-website",
-    href: "https://sff-pc-builder.max-c82.workers.dev/",
-    description: "A fitment engine for planning small-form-factor PC builds.",
-    technologies: "Astro · Tailwind CSS · Cloudflare D1 · TypeScript",
-  },
-  {
-    name: "poe-shopping-list",
-    href: "https://github.com/max-arias/poe-shopping-list",
-    description: "A local-only Path of Exile shopping-list browser extension.",
-    technologies: "WXT · Vue 3 · Pinia · Zod · Tailwind CSS · VitePlus",
-  },
-];
 ---
 
 <BaseLayout
@@ -100,11 +80,19 @@ const petProjects = [
           </p>
         </div>
 
-        <nav class="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[0.95rem] text-white/58">
-          <a class="button-link" href="mailto:max@max-arias.com">Email</a>
-          <a class="button-link" href="https://www.linkedin.com/in/maxarias/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="button-link" href="https://github.com/max-arias/" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button-link" href="/resume">CV</a>
+        <nav class="mt-8 space-y-2 text-[0.95rem] text-white/58" aria-label="Connect and explore">
+          <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span class="text-white/38">Work:</span>
+            <a class="button-link" href="mailto:max@max-arias.com">Email</a>
+            <a class="button-link" href="https://www.linkedin.com/in/maxarias/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button-link" href="https://github.com/max-arias/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button-link" href="/resume">CV</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span class="text-white/38">Fun:</span>
+            <a class="button-link" href="/pet-projects">Pet projects</a>
+            <a class="button-link" href="/game-dev">Game Dev assets</a>
+          </div>
         </nav>
       </header>
 
@@ -135,27 +123,6 @@ const petProjects = [
                 Selected engagements included LeafLink, Minted, SoulCycle, and Evernote. At LeafLink, I reduced bundle and image payloads by roughly 30%; at Minted, I built Lighthouse/Puppeteer tooling for synthetic performance metrics.
               </p>
             </article>
-          </div>
-        </section>
-
-        <section class="section-block fade-in-up" style="--fade-delay: 240ms;" aria-labelledby="pet-projects-heading">
-          <div class="section-heading-row">
-            <h2 id="pet-projects-heading" class="section-label">Pet projects</h2>
-            <span class="section-note">Personal</span>
-          </div>
-
-          <div class="space-y-7">
-            {petProjects.map((project) => (
-              <article class="entry">
-                <div class="entry-header">
-                  <h3>
-                    <a href={project.href} target="_blank" rel="noreferrer">{project.name}</a>
-                  </h3>
-                </div>
-                <p>{project.description}</p>
-                <p class="entry-meta"><span>Built with</span> {project.technologies}</p>
-              </article>
-            ))}
           </div>
         </section>
 
