@@ -1,7 +1,7 @@
 const urls = [
-  "https://www.max-arias.com/",
-  "https://www.max-arias.com/pet-projects",
-  "https://www.max-arias.com/game-dev",
+  { loc: "https://maxarias.com/" },
+  { loc: "https://maxarias.com/pet-projects" },
+  { loc: "https://maxarias.com/game-dev", lastmod: "2026-09-03" },
 ];
 
 export function GET() {
@@ -9,7 +9,7 @@ export function GET() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map(
-    (url) => `  <url><loc>${url}</loc></url>`,
+    ({ loc, lastmod }) => `  <url><loc>${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`,
   )
   .join("\n")}
 </urlset>`;

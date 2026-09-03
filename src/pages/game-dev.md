@@ -1,8 +1,8 @@
 ---
 layout: ../layouts/GameDevLayout.astro
-title: Game dev resources
-description: A practical, editable field guide to game-development assets, references, and tools.
-updated: "2026-09-02"
+title: "Game Development Resources: Assets, Audio, Tools & References"
+description: A curated guide to game-development assets, textures, audio, tools, and references for building games.
+updated: "2026-09-03"
 ---
 
 <nav class="resource-contents" aria-label="On this page">
@@ -11,12 +11,15 @@ updated: "2026-09-02"
   <a href="#textures-materials">Textures &amp; materials</a>
   <a href="#audio-music">Audio &amp; music</a>
   <a href="#references-tools">References &amp; tools</a>
+  <a href="#before-you-download">Before you download</a>
   <a href="#sources-attribution">Sources &amp; attribution</a>
 </nav>
 
+A working list of game-development assets, audio, references, and tools I return to while prototyping. Start broad, then narrow by discipline, art direction, and the current terms for each resource.
+
 ## Assets
 
-This is the broadest shelf: start with a pack that gets your prototype moving, then narrow by discipline and art direction. Community finds can be temporary, account-gated, or subject to licence changes.
+Start with a pack that gets your prototype moving, then narrow by discipline and art direction. Community finds can be temporary, account-gated, or subject to licence changes.
 
 ### Start here / broad libraries
 
@@ -100,6 +103,10 @@ This is the broadest shelf: start with a pack that gets your prototype moving, t
 - **[Adobe Color](https://color.adobe.com/)** — Tools for exploring and testing color palettes.
 - **[PureRef](https://www.pureref.com/)** — A focused workspace for collecting visual references.
 - **[AssetHoard](https://assethoard.com/)** — A place to browse curated game-asset finds.
+
+## Before you download
+
+Listings and policies can change. Before downloading or shipping with a resource, open its current source page and check the licence, whether commercial use is allowed, engine and file-format compatibility, and whether the download is still available. Keep a note of the relevant terms and attribution requirements for your project.
 
 ## Sources & attribution
 

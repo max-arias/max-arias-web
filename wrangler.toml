@@ -1,5 +1,15 @@
 name = "max-arias-web"
+main = "src/worker.ts"
 compatibility_date = "2026-07-06"
+
+routes = [
+  { pattern = "maxarias.com", custom_domain = true },
+  { pattern = "www.maxarias.com", custom_domain = true },
+  { pattern = "max-arias.com", custom_domain = true },
+  { pattern = "www.max-arias.com", custom_domain = true },
+]
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
+run_worker_first = true

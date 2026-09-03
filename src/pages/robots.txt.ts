@@ -6,6 +6,9 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: GPTBot
+Disallow: /
+
 User-agent: Claude-SearchBot
 Allow: /
 
@@ -21,7 +24,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://www.max-arias.com/sitemap.xml
+  Sitemap: https://maxarias.com/sitemap.xml
 `,
     {
       headers: {

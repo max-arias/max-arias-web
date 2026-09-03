@@ -6,17 +6,37 @@ import siteIconMap from "../data/game-dev-site-icons.json";
 const {
   title = "Game dev resources",
   description = "A practical, editable field guide to game-development assets, references, and tools.",
-  canonical = "https://www.max-arias.com/game-dev",
-  updated = "2026-09-02",
+  canonical = "https://maxarias.com/game-dev",
+  updated = "2026-09-03",
 } = Astro.props;
 
 const updatedLabel = new Intl.DateTimeFormat("en", {
   dateStyle: "long",
   timeZone: "UTC",
 }).format(new Date(`${updated}T00:00:00Z`));
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  url: canonical,
+  description,
+  dateModified: updated,
+  author: { "@id": "https://maxarias.com/#person" },
+  isPartOf: { "@id": "https://maxarias.com/#website" },
+};
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  socialImage="https://maxarias.com/og/game-dev.png"
+  socialImageAlt="Game development resources curated by Maximiliano Arias"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)}></script>
+  </Fragment>
   <main class="game-dev-page">
     <div class="game-dev-shell">
       <a class="game-dev-back" href="/">← Back to home</a>

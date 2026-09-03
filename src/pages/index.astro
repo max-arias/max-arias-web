@@ -6,10 +6,10 @@ const personSchema = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://www.max-arias.com/#person",
+      "@id": "https://maxarias.com/#person",
       name: "Maximiliano Arias",
       alternateName: "Max Arias",
-      url: "https://www.max-arias.com/",
+      url: "https://maxarias.com/",
       jobTitle: "Staff Front-End Engineer / Frontend Fortress Lead",
       description:
         "Senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems.",
@@ -36,19 +36,19 @@ const personSchema = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.max-arias.com/#website",
-      url: "https://www.max-arias.com/",
+      "@id": "https://maxarias.com/#website",
+      url: "https://maxarias.com/",
       name: "Maximiliano Arias",
       description: "The professional homepage of Maximiliano Arias.",
-      publisher: { "@id": "https://www.max-arias.com/#person" },
+      publisher: { "@id": "https://maxarias.com/#person" },
     },
     {
       "@type": "ProfilePage",
-      "@id": "https://www.max-arias.com/#profilepage",
-      url: "https://www.max-arias.com/",
+      "@id": "https://maxarias.com/#profilepage",
+      url: "https://maxarias.com/",
       name: "Maximiliano Arias | Senior Frontend Platform Engineer",
-      isPartOf: { "@id": "https://www.max-arias.com/#website" },
-      mainEntity: { "@id": "https://www.max-arias.com/#person" },
+      isPartOf: { "@id": "https://maxarias.com/#website" },
+      mainEntity: { "@id": "https://maxarias.com/#person" },
     },
   ],
 };
@@ -58,7 +58,7 @@ const personSchema = {
 <BaseLayout
   title="Maximiliano Arias | Senior Frontend Platform Engineer"
   description="Senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems."
-  canonical="https://www.max-arias.com/"
+  canonical="https://maxarias.com/"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>

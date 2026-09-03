@@ -6,8 +6,9 @@ Demand.io / Product.ai (since September 2021): Staff Front-End Engineer / Fronte
 
 Truelogic engagements included LeafLink, Minted, SoulCycle, and Evernote. LeafLink had roughly 30% bundle and image payload reductions. Minted included Lighthouse/Puppeteer tooling for synthetic performance metrics.
 
-Homepage: https://www.max-arias.com/
+Homepage: https://maxarias.com/
 Resume (external Google Drive CV): https://drive.google.com/file/d/1WWMIGpjEJwXdqxdFY1JwCvS2OJ0LZy9W/view?usp=sharing
+Game Dev Resources: https://maxarias.com/game-dev — a curated, editable list of game-development assets, audio, references, and tools.
 
 This file is optional guidance for language models and other automated readers. It does not affect search rankings.
 `;

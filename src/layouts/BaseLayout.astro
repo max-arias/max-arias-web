@@ -1,11 +1,21 @@
 ---
 import "../styles/global.css";
 
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  socialImage?: string;
+  socialImageAlt?: string;
+}
+
 const {
   title = "Maximiliano Arias | Senior Frontend Platform Engineer",
   description = "Senior frontend and frontend platform engineer with 15+ years of experience building web products, browser extensions, mobile experiences, and shared UI systems.",
-  canonical = "https://www.max-arias.com/",
-} = Astro.props;
+  canonical = "https://maxarias.com/",
+  socialImage = "https://maxarias.com/og/portfolio.png",
+  socialImageAlt = "Maximiliano Arias — senior frontend and frontend platform engineer",
+} = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -15,6 +25,8 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Maximiliano Arias" />
+    <meta name="theme-color" content="#0d1117" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
@@ -26,10 +38,18 @@ const {
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Maximiliano Arias" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialImageAlt} />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
 
     <slot name="head" />
   </head>
