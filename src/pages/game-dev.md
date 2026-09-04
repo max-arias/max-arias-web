@@ -2,7 +2,7 @@
 layout: ../layouts/GameDevLayout.astro
 title: "Game Development Resources: Assets, Audio, Tools & References"
 description: A curated guide to game-development assets, textures, audio, tools, and references for building games.
-updated: "2026-09-03"
+updated: "2026-09-04"
 ---
 
 <nav class="resource-contents" aria-label="On this page">
@@ -101,6 +101,9 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 - **[Seyed’s publishers list](https://docs.google.com/spreadsheets/u/0/d/15AN1I1mB67AJkpMuUUfM5ZUALkQmrvrznnPYO5QbqD0/htmlview#gid=2049353894)** — A community-maintained publisher research sheet.
 - **[Level Design reference database](https://level-design.org/referencedb/index.php?/category/29)** — Reference material for studying level design.
 - **[Adobe Color](https://color.adobe.com/)** — Tools for exploring and testing color palettes.
+- **[Aseprite](https://www.aseprite.org/)** — A pixel-art and animated-sprite editor with frame-animation and sprite-sheet tools.
+- **[GodotSteam](https://codeberg.org/godotsteam/godotsteam)** — An open-source Godot integration for Valve Steamworks features.
+- **[Piskel](https://www.piskelapp.com/)** — A browser-based editor for pixel art and animated sprites.
 - **[PureRef](https://www.pureref.com/)** — A focused workspace for collecting visual references.
 - **[AssetHoard](https://assethoard.com/)** — A place to browse curated game-asset finds.
 

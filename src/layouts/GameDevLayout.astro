@@ -3,12 +3,14 @@ import BaseLayout from "./BaseLayout.astro";
 import imageMap from "../data/game-dev-og-images.json";
 import siteIconMap from "../data/game-dev-site-icons.json";
 
+const { frontmatter } = Astro.props;
+
 const {
   title = "Game dev resources",
   description = "A practical, editable field guide to game-development assets, references, and tools.",
   canonical = "https://maxarias.com/game-dev",
   updated = "2026-09-03",
-} = Astro.props;
+} = frontmatter;
 
 const updatedLabel = new Intl.DateTimeFormat("en", {
   dateStyle: "long",
