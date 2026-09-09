@@ -3,6 +3,7 @@ layout: ../layouts/GameDevLayout.astro
 title: "Game Development Resources: Assets, Audio, Tools & References"
 description: A curated guide to game-development assets, textures, audio, tools, and references for building games.
 updated: "2026-09-09"
+heroTitle: "Game dev resources"
 ---
 
 <nav class="resource-contents" aria-label="On this page">
@@ -11,7 +12,6 @@ updated: "2026-09-09"
   <a href="#textures-materials">Textures &amp; materials</a>
   <a href="#audio-music">Audio &amp; music</a>
   <a href="#references-tools">References &amp; tools</a>
-  <a href="#before-you-download">Before you download</a>
   <a href="#sources-attribution">Sources &amp; attribution</a>
 </nav>
 
@@ -90,9 +90,6 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 - **[PureRef](https://www.pureref.com/)** — A focused workspace for collecting visual references.
 - **[AssetHoard](https://assethoard.com/)** — A place to browse curated game-asset finds.
 
-## Before you download
-
-Listings and policies can change. Before downloading or shipping with a resource, open its current source page and check the licence, whether commercial use is allowed, engine and file-format compatibility, and whether the download is still available. Keep a note of the relevant terms and attribution requirements for your project.
 
 ## Sources & attribution
 

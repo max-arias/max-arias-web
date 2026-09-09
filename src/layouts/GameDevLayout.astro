@@ -7,6 +7,7 @@ const { frontmatter } = Astro.props;
 
 const {
   title = "Game dev resources",
+  heroTitle = title,
   description = "A practical, editable field guide to game-development assets, references, and tools.",
   canonical = "https://maxarias.com/game-dev",
   updated = "2026-09-03",
@@ -43,7 +44,7 @@ const collectionSchema = {
     <div class="game-dev-shell">
       <a class="game-dev-back" href="/">← Back to home</a>
       <header class="game-dev-hero">
-        <h1>{title}</h1>
+        <h1>{heroTitle}</h1>
         <p class="game-dev-lede">I keep this list when I dabble in game development as a hobby, tracking useful assets, audio, references, and tools. It is a short, editable shelf of things worth returning to.</p>
         <time class="game-dev-updated" datetime={updated}>Last updated {updatedLabel}</time>
       </header>
@@ -138,9 +139,9 @@ const collectionSchema = {
   .game-dev-shell { width: min(100% - 3rem, 62rem); margin: 0 auto; padding: 3.5rem 0 7rem; }
   .game-dev-back { display: inline-flex; align-items: center; gap: .35rem; color: rgba(237,242,247,.55); font-size: .88rem; letter-spacing: -.01em; }
   .game-dev-back:hover { color: var(--color-accent); }
-  .game-dev-hero { max-width: 47rem; padding: 4rem 0 3.5rem; }
-  .game-dev-hero h1 { margin: 0; color: var(--color-text); font-size: clamp(2.65rem, 8vw, 5.4rem); font-weight: 600; letter-spacing: -.055em; line-height: .98; }
-  .game-dev-lede { max-width: 39rem; margin: 1.75rem 0 0; color: rgba(237,242,247,.68); font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.75; }
+  .game-dev-hero { max-width: 52rem; padding: 3rem 0; }
+  .game-dev-hero h1 { margin: 0; color: var(--color-text); font-size: clamp(2.35rem, 5vw, 3.75rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.02; }
+  .game-dev-lede { max-width: 39rem; margin: 1.5rem 0 0; color: rgba(237,242,247,.68); font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.75; }
   .game-dev-updated { display: block; margin-top: 1.35rem; color: rgba(237,242,247,.38); font-size: .78rem; letter-spacing: .02em; }
   .game-dev-content { max-width: 48rem; }
   .game-dev-content :global(.resource-contents) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem 1rem; margin: 0 0 3.5rem; padding: 1rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
@@ -169,7 +170,7 @@ const collectionSchema = {
   .game-dev-content :global(.contents-label) { margin: 0 0 .7rem; color: rgba(237,242,247,.38); font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
   @media (max-width: 600px) {
     .game-dev-shell { width: min(100% - 2rem, 62rem); padding-top: 2rem; }
-    .game-dev-hero { padding: 3.25rem 0 2.75rem; }
+    .game-dev-hero { padding: 2.5rem 0; }
     .game-dev-content :global(.resource-contents) { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 2.75rem; }
     .game-dev-content :global(.resource-row) { grid-template-columns: 64px minmax(0, 1fr); gap: .8rem; }
     .game-dev-content :global(.resource-thumbnail) { width: 64px; height: 44px; }
