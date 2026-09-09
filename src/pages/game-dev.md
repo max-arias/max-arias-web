@@ -2,7 +2,7 @@
 layout: ../layouts/GameDevLayout.astro
 title: "Game Development Resources: Assets, Audio, Tools & References"
 description: A curated guide to game-development assets, textures, audio, tools, and references for building games.
-updated: "2026-09-04"
+updated: "2026-09-09"
 ---
 
 <nav class="resource-contents" aria-label="On this page">
@@ -32,17 +32,8 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 
 - **[CraftPix](https://craftpix.net/freebies/)** — Free 2D game-art and sprite resources.
 - **[Spriters Resource](https://www.spriters-resource.com/)** — A reference library for game sprites and visual studies.
-- **[Klamtii Tree Sprites](https://klamtii.itch.io/tree-sprites)** — Tree sprites for adding readable nature to 2D scenes.
-- **[Dumivid Mechanized Magic cards](https://dumivid.itch.io/mechanized-magic-2d-vector-fantasy-robot-cards-pack)** — Vector fantasy robot cards with a distinct illustrated theme.
-- **[Voxybuns at-icons](https://github.com/Voxybuns/at-icons)** — An icon set, also available through the [itch.io page](https://voxybuns.itch.io/at-icons).
+- **[Voxybuns at-icons](https://github.com/Voxybuns/at-icons)** — An icon set.
 - **[Pixelart Japanese Food](https://pixelart.to/asset-packs/japanese-food-32)** — 32px pixel-art food for menus, shops, or collectibles.
-- **[ICODOT icons](https://gleeson.itch.io/icodot)** — Compact icons for game UI and interface systems.
-- **[0-mem0ry Post Apoc Office](https://0-mem0ry.itch.io/post-apoc-office-mega-bundle-free)** — A free post-apocalyptic office bundle for environmental storytelling.
-- **[Ragnir 4-season trees](https://ragnir123.itch.io/4-season-trees-pack-v1)** — Trees spanning four seasons for changing environments.
-- **[mi-dev steampunk sprites](https://mi-dev.itch.io/steampunksprites)** — Steampunk-themed sprites for a mechanical world.
-- **[Patrick Winter Heimlich](https://patrick-winter.itch.io/heimlich)** — A focused 2D asset pack with a specific visual identity.
-- **[Styloo Company Characters](https://styloo.itch.io/company)** — Character resources for a company or workplace setting.
-- **[SBS Tiny Texture Pack 2](https://screamingbrainstudios.itch.io/tiny-texture-pack-2)** — Small textures useful for compact 2D scenes and surfaces.
 
 ### 3D & environment
 
@@ -55,21 +46,12 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 - **[AssetPlus for Godot](https://store.godotengine.org/asset/moongdev/assetplus/)** — An asset resource for Godot projects.
 - **[Enterables Fab](https://www.fab.com/sellers/Enterables)** — Enterable environment assets on Fab; see also [their free CGTrader models](https://www.cgtrader.com/3d-models?author=Enterables&free=1&per_page=120&sort_by=highest_price).
 - **[Julio Sillet](https://juliosillet.gumroad.com/)** — Stylized 3D asset releases and packs.
-- **[KayKit Board Game Bits](https://kaylousberg.itch.io/board-game-bits)** — Modular board-game-inspired 3D pieces.
 - **[Synty Bubblegum Killstick](https://syntystore.com/products/polygon-bubblegum-killstick)** — A stylized Polygon asset with a playful action tone.
-- **[RAD River Forest](https://radcreations.itch.io/river-forest)** — A river-and-forest environment kit.
 - **[Leartes Cosmos weekly free assets](https://cosmos.leartesstudios.com/free)** — A regularly refreshed stream of free 3D assets.
-- **[Minifantasy Towns II](https://krishna-palacio.itch.io/minifantasy-3d-towns-ii)** — Stylized fantasy town-building pieces.
-- **[Sigils Vault Modular Dungeon](https://sigilsvault.itch.io/modular-dungeon-kit-v10)** — Modular dungeon construction assets.
-- **[Luminous Dice tiny voxel nature](https://luminous-dice.itch.io/tiny-voxel-nature-pack)** — Tiny voxel nature props and scenery.
 - **[Kenney Tiny Farm](https://kenney.nl/assets/tiny-farm)** — Compact farm-themed pieces for a small-scale world.
 - **[Kenney Modular Cave](https://kenney.nl/assets/modular-cave-kit)** — Modular cave geometry for quickly assembling spaces.
-- **[Mrtnli Abandoned Hospital](https://mrtnli.itch.io/free-abandoned-hospital-psx-style)** — A PSX-style abandoned hospital environment.
 - **[ITHappy Mini Series](https://ithappystudios.com/mini-series/)** — Small-scale 3D environment and prop resources.
-- **[Minifantasy Elven Kingdom](https://krishna-palacio.itch.io/minifantasy-3d-elven-kingdom)** — Stylized pieces for an elven fantasy kingdom.
-- **[Sigils Vault Modular Cathedral](https://sigilsvault.itch.io/modular-cathedral-kit)** — Modular cathedral architecture for fantasy scenes.
 - **[NASA Dragonfly](https://nasa3d.arc.nasa.gov/detail/dragonfly)** and **[Apollo 11 Command Module](https://nasa3d.arc.nasa.gov/detail/apollo11-command-module)** — NASA 3D models for science and space projects.
-- **[KayKit Forest Nature](https://kaylousberg.itch.io/kaykit-forest)** — Forest nature pieces for stylized 3D scenes.
 
 ## Textures & materials
 
@@ -103,6 +85,7 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 - **[Adobe Color](https://color.adobe.com/)** — Tools for exploring and testing color palettes.
 - **[Aseprite](https://www.aseprite.org/)** — A pixel-art and animated-sprite editor with frame-animation and sprite-sheet tools.
 - **[GodotSteam](https://codeberg.org/godotsteam/godotsteam)** — An open-source Godot integration for Valve Steamworks features.
+- **[Roguelike Tutorial — In Rust](https://bfnightly.bracketproductions.com/rustbook/chapter_0.html)** — A free, open-source tutorial for building a roguelike in Rust.
 - **[Piskel](https://www.piskelapp.com/)** — A browser-based editor for pixel art and animated sprites.
 - **[PureRef](https://www.pureref.com/)** — A focused workspace for collecting visual references.
 - **[AssetHoard](https://assethoard.com/)** — A place to browse curated game-asset finds.
