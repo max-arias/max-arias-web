@@ -1,7 +1,7 @@
 const urls = [
   { loc: "https://maxarias.com/" },
   { loc: "https://maxarias.com/pet-projects" },
-  { loc: "https://maxarias.com/game-dev", lastmod: "2026-09-09" },
+  { loc: "https://maxarias.com/game-dev", lastmod: "2026-09-10" },
 ];
 
 export function GET() {

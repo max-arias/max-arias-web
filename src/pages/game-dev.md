@@ -2,7 +2,7 @@
 layout: ../layouts/GameDevLayout.astro
 title: "Game Development Resources: Assets, Audio, Tools & References"
 description: A curated guide to game-development assets, textures, audio, tools, and references for building games.
-updated: "2026-09-09"
+updated: "2026-09-10"
 heroTitle: "Game dev resources"
 ---
 
@@ -38,6 +38,7 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 ### 3D & environment
 
 - **[Quaternius](https://quaternius.com/)** — A broad source of approachable 3D game assets.
+- **[Riley B3D Library](https://rileyb3d.com/library)** — Game-ready Blender props and asset packs; free accounts get two downloads daily.
 - **[Poly Haven](https://polyhaven.com/)** — A library for high-quality 3D assets, HDRIs, and environments.
 - **[Sketchfab downloadable models](https://sketchfab.com/search?features=downloadable)** — Searchable models marked as downloadable.
 - **[Mixamo](https://www.mixamo.com/)** — Character animation and rigging resources for quick iteration.
