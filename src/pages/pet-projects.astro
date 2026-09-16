@@ -14,28 +14,50 @@ const petProjects: PetProject[] = [
     name: "Movies that feel like",
     href: "https://mtfl.maxarias.com/",
     repo: "https://github.com/max-arias/movies-that-feel-like",
-    description: "A read-only discovery site built from Reddit movie recommendations.",
+    description: `A discovery site for r/MoviesThatFeelLike, where people post an image and ask for films that
+      feel the same. A scheduled Python pipeline pulls posts and full comment trees from the Arctic Shift
+      archive, has an LLM read each thread for concrete film and TV recommendations plus a one-line vibe
+      summary, resolves every title against TMDB and IGDB, and emits id-free upserts into Cloudflare D1 — the
+      deployed database is rebuilt from migrations rather than hand-edited. Because Reddit answers a deleted
+      gallery image with a placeholder PNG, a separate probe tracks image liveness, and a post stays published
+      only while one real image survives.`,
     technologies: "Astro · Cloudflare Pages/Workers · D1 · Python · Tailwind CSS · daisyUI",
   },
   {
     name: "SFF build planner",
     href: "https://sff.maxarias.com/",
     repo: "https://github.com/max-arias/sff-website",
-    description: "A fitment engine for planning small-form-factor PC builds.",
+    description: `Pick a case, GPU, PSU, cooler, motherboard, and RAM, and it reports what fits: pass,
+      conditional, or fail per constraint, each verdict carrying the measurement behind it — anything inside 5 mm
+      reads as a tight fit rather than a clean pass. The whole 8,489-row catalog ships to the browser as one
+      gzipped SQLite file that a Web Worker caches and reopens in memory through sqlite-wasm, so filtering and
+      search run locally and never touch the database, using the same FTS5 trigram index the server does. Slots
+      and filters live in the URL, so any build can be shared and replayed.`,
     technologies: "Astro · Tailwind CSS · Cloudflare D1 · TypeScript",
   },
   {
     name: "poe-shopping-list",
     href: "https://github.com/max-arias/poe-shopping-list",
-    description: "A local-only Path of Exile shopping-list browser extension.",
+    description: `A Chrome side-panel extension for Path of Exile that keeps several named shopping lists of
+      Trade searches. It opens only on the official Trade site, registers the search you are looking at as an
+      item, and stores everything in local browser storage — no account, no server, no network calls, just two
+      permissions and the Trade hosts. Sharing works offline through the psl1. share code, which wraps gzip and
+      base64url over a strict versioned schema with CRC32 and single-member checks, so a bad import is rejected
+      with the pasted text kept for editing, and every import lands as an independent local copy. A companion
+      static catalog publishes curated lists.`,
     technologies: "WXT · Vue 3 · Pinia · Zod · Tailwind CSS · VitePlus",
   },
   {
     name: "Level up fixes",
     href: "https://thunderstore.io/c/riskofrain2/p/TeamTayne/LevelUpChoicesFixes/",
     repo: "https://github.com/max-arias/level-up-fixes",
-    description:
-      "A Risk of Rain 2 mod adding compatibility fixes and configurable quality support to the LevelUpChoices item-choice mod.",
+    description: `A BepInEx add-on for Risk of Rain 2 that fixes and extends the LevelUpChoices mod. It patches
+      eleven upstream methods across LevelUpChoices and the game itself with Harmony — reading ten private fields
+      by reflection and checking each seam's signature, so an upstream change degrades with a logged warning
+      instead of a crash — and adds configurable item-quality rolls with weighted tiers and a guaranteed-quality
+      cadence. Item-source removal runs off a single policy list, capped at four equipment barrels per stage, and
+      the host's eleven settings sync to clients over an R2API message. A Python suite parses those policy lists
+      and asserts that every one of the game's 67 stage-pool cards is either blocked or deliberately kept.`,
     technologies: "C# · BepInEx · R2API · Risk of Rain 2 · Thunderstore",
   },
 ];
@@ -89,7 +111,7 @@ const petProjects: PetProject[] = [
                   )}
                 </h3>
               </div>
-              <p>{project.description}</p>
+              <p>{project.description.replace(/\s+/g, " ")}</p>
               <p class="entry-meta"><span>Built with</span> {project.technologies}</p>
             </article>
           ))}
