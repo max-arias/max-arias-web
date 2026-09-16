@@ -114,6 +114,10 @@
     @apply flex items-center gap-2 text-[1rem] font-medium text-white/92;
   }
 
+  .entry-header h3 .entry-sep {
+    @apply text-[0.95rem] leading-none text-white/24 select-none;
+  }
+
   .entry .entry-repo {
     @apply inline-flex shrink-0 text-white/34 no-underline decoration-transparent transition-colors duration-150 hover:text-accent;
   }
