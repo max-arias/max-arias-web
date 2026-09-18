@@ -60,12 +60,23 @@ const petProjects: PetProject[] = [
       and asserts that every one of the game's 67 stage-pool cards is either blocked or deliberately kept.`,
     technologies: "C# · BepInEx · R2API · Risk of Rain 2 · Thunderstore",
   },
+  {
+    name: "Command Queue save/load",
+    href: "https://thunderstore.io/c/riskofrain2/p/TeamTayne/CommandQueueSaveLoad/",
+    repo: "https://github.com/max-arias/command-queue-save-load",
+    description: `A BepInEx add-on for Risk of Rain 2 that gives CommandQueue a separate saved plan for each survivor.
+      Save and open buttons sit on CommandQueue's own row, while an optional automatic load restores the starting
+      survivor's plan at the beginning of a run. The live queue can be consumed or reset without touching the saved
+      copy, and the storage stays in readable JSON — with missing modded items preserved and skipped rather than
+      silently discarded. It reads CommandQueue's public state and API without patching the dependency.`,
+    technologies: "C# · BepInEx · CommandQueue · Risk of Rain 2 · Thunderstore",
+  },
 ];
 ---
 
 <BaseLayout
   title="Pet projects | Maximiliano Arias"
-  description="Personal projects by Maximiliano Arias, including small web products, a local-only browser extension, and a Risk of Rain 2 mod."
+  description="Personal projects by Maximiliano Arias, including small web products, a local-only browser extension, and Risk of Rain 2 mods."
   canonical="https://maxarias.com/pet-projects"
 >
   <main class="mx-auto min-h-screen max-w-page px-6 py-14 sm:px-8 sm:py-20 fade-in-page">
