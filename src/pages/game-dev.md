@@ -2,7 +2,7 @@
 layout: ../layouts/GameDevLayout.astro
 title: "Game Development Resources: Assets, Audio, Tools & References"
 description: A curated guide to game-development assets, textures, audio, tools, and references for building games.
-updated: "2026-09-10"
+updated: "2026-09-23"
 heroTitle: "Game dev resources"
 ---
 
@@ -49,8 +49,6 @@ Start with a pack that gets your prototype moving, then narrow by discipline and
 - **[Julio Sillet](https://juliosillet.gumroad.com/)** — Stylized 3D asset releases and packs.
 - **[Synty Bubblegum Killstick](https://syntystore.com/products/polygon-bubblegum-killstick)** — A stylized Polygon asset with a playful action tone.
 - **[Leartes Cosmos weekly free assets](https://cosmos.leartesstudios.com/free)** — A regularly refreshed stream of free 3D assets.
-- **[Kenney Tiny Farm](https://kenney.nl/assets/tiny-farm)** — Compact farm-themed pieces for a small-scale world.
-- **[Kenney Modular Cave](https://kenney.nl/assets/modular-cave-kit)** — Modular cave geometry for quickly assembling spaces.
 - **[ITHappy Mini Series](https://ithappystudios.com/mini-series/)** — Small-scale 3D environment and prop resources.
 - **[NASA Dragonfly](https://nasa3d.arc.nasa.gov/detail/dragonfly)** and **[Apollo 11 Command Module](https://nasa3d.arc.nasa.gov/detail/apollo11-command-module)** — NASA 3D models for science and space projects.
 
