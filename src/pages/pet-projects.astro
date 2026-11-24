@@ -71,12 +71,25 @@ const petProjects: PetProject[] = [
       silently discarded. It reads CommandQueue's public state and API without patching the dependency.`,
     technologies: "C# · BepInEx · CommandQueue · Risk of Rain 2 · Thunderstore",
   },
+  {
+    name: "Champions of the Sons",
+    href: "https://github.com/max-arias/ChampionsOfTheSons",
+    description: `An RPG overhaul for Sons of the Forest, rebuilt from scratch in the spirit of Champions of the
+      Forest, the mod we sank countless hours into in The Forest. Enemies take levels from the players near them,
+      roll as elites, minibosses or bosses with affixes, and drop loot in four rarities with rolled stats, sets and
+      uniques — 135 items, 28 spells, class-shaped perk trees and a kill-streak XP multiplier, playable solo, in
+      co-op and on dedicated servers with the host authoritative for enemies and drops. The rules live in a pure
+      .NET core with no Unity references, covered by 292 xUnit tests, while a thin RedLoader layer bridges them into
+      the IL2CPP game through Harmony. Enemy health, damage and armor follow log-scale curves fitted in a pacing
+      simulator, and features are checked in-game by headless self-test runs against a real save.`,
+    technologies: "C# · .NET · RedLoader · Harmony · Unity HDRP · Sons of the Forest",
+  },
 ];
 ---
 
 <BaseLayout
   title="Pet projects | Maximiliano Arias"
-  description="Personal projects by Maximiliano Arias, including small web products, a local-only browser extension, and Risk of Rain 2 mods."
+  description="Personal projects by Maximiliano Arias, including small web products, a local-only browser extension, and game mods for Risk of Rain 2 and Sons of the Forest."
   canonical="https://maxarias.com/pet-projects"
 >
   <main class="mx-auto min-h-screen max-w-page px-6 py-14 sm:px-8 sm:py-20 fade-in-page">
